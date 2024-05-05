@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#000000"/>
+  <meta
+    name="description"
+    content="Web site created using create-react-app"
+  />
+  <title>App - zaloguj</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div class="login-box">
+  <div class="login-header">
+    <header>Zaloguj</header>
+    <p class="under-title">do Twojego panelu administracyjnego</p>
+  </div>
+  <form class="login-form" method="post" action="main_window.html" name="form" onsubmit="return validated()">
+    <div class="input-box">
+      <input type="text" class="input-field" name="email" placeholder="E-mail" autocomplete="off" required>
+    </div>
+    <div class="input-box">
+      <input type="password" class="input-field" name="password" placeholder="Hasło" autocomplete="off" required>
+    </div>
+    <div id="login_error">Niepoprawny e-mail lub hasło</div>
+  </form>
+  <div class="forgot">
+    <section>
+      <input type="checkbox" id="check">
+      <label for="check">Zapamiętaj</label>
+    </section>
+    <section>
+      <a href="password_forgot.html">Zapomniałem/am hasło</a>
+    </section>
+  </div>
+  <div class="input-submit">
+    <button class="submit-button" id="submit" onclick=validated()></button>
+    <label for="submit">Zaloguj</label>
+  </div>
+</div>
+<script src="js/login_validation.js"></script>
+
+</body>
+</html>

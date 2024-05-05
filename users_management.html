@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/users_management.css">
+  <title>Zarządzanie użytkownikami</title>
+</head>
+<body>
+<label class="hamburger-menu">
+  <input type="checkbox"/>
+</label>
+<aside class="sidebar">
+  <br><br><br><br><br>
+  <a href="event_management.html">Zarządzanie wydarzeniami</a>
+  <br><br>
+  <a href="">Zarządzanie użytkownikami</a>
+  <br><br>
+  <a href="version_control.html">Kontrola wersji</a>
+  <br><br>
+  <a href="stats.html"
+     target="_blank">Statystyki</a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br>
+  <a class="logout-button" href="login.html">Wyloguj się</a>
+</aside>
+<div class="record-box">
+  <header>Użytkownicy
+    <button class="send">
+      <img src="send.png" alt="Wyślij..">
+    </button>
+    <button class="block">
+      <img src="block.png" alt="Zablokuj">
+    </button>
+  </header>
+
+  <div class="record-panel">
+    <button class="record" onclick="displayText('Użytkownik: <br><br>Temat: <br><br>')">
+      <label class="record-info">
+        <label class="sender">Zatoka smaku</label>
+        <label class="subject">Inne</label>
+        <label class="datetime">2023-04-22 12:30</label>
+        <label class="message">Moja ostatnio dodana oferta wydaje się nie wyświetlać innym użytkownikom. Proszę o
+          usunięcie jej z bazy.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label class="record-info">
+        <label class="sender">adam_adventure</label>
+        <label class="subject">Zgłoszenie użytkownika</label>
+        <label class="datetime">2023-02-08 17:05</label>
+        <label class="message">Sztucznie podbija statystyki wydarzeniom.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label class="record-info">
+        <label class="sender">emma_eloquence</label>
+        <label class="subject">Zgłoszenie wydarzenia</label>
+        <label class="datetime">2023-12-27 10:30</label>
+        <label class="message">Wydarzenie w czasie rozpoczęcia nie miało miejsca</label>
+      </label>
+    </button>
+  </div>
+  <div class="message-panel" id="message-panel">
+    <div class="message-info">
+      <p>Twórca wydarzenia: </p>
+      <span id="user-info"></span>
+      <p>Nazwa wydarzenia: </p>
+      <span id="subject-info"></span>
+      <p>Opis:</p>
+      <span id="message-content"></span>
+    </div>
+    <div class="related-records">
+      <p>Użytkownicy:</p>
+      <div class="record-list">
+        <button class="user-record">
+          <label>
+            <input type="checkbox" class="user-record-checkbox">
+          </label>
+          <label class="sender">Kasia Grzyb</label>
+        </button>
+        <button class="user-record">
+          <label>
+            <input type="checkbox" class="user-record-checkbox">
+          </label>
+          <label class="sender">Maurycy Kość</label>
+        </button>
+        <button class="user-record">
+          <label>
+            <input type="checkbox" class="user-record-checkbox">
+          </label>
+          <label class="sender">Izabela Pośpiesz</label>
+        </button>
+        <button class="user-record">
+          <label>
+            <input type="checkbox" class="user-record-checkbox">
+          </label>
+          <label class="sender">Karol Lorak</label>
+        </button>
+        <button class="user-record">
+          <label>
+            <input type="checkbox" class="user-record-checkbox">
+          </label>
+          <label class="sender">Ignacy Wór</label>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="overlay"></div>
+
+<div class="message-form" id="message">
+  <p>Wiadomość dla wybranych</p>
+  <label>
+    <textarea placeholder="Wpisz swoją wiadomość..." rows="4"></textarea>
+  </label>
+  <button class="send-message-button">Wyślij</button>
+  <button class="cancel-button">Anuluj</button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sendButton = document.querySelector('.send');
+    const blockButton = document.querySelector('.block');
+    const sendMessagekButton = document.querySelector('.send-message-button');
+    const overlay = document.querySelector('.overlay');
+    const messageForm = document.querySelector('.message-form');
+
+    sendButton.addEventListener('click', function () {
+      const checkedCheckboxes = document.querySelectorAll('.user-record-checkbox:checked');
+
+      if (checkedCheckboxes.length > 0) {
+        // Jeśli jest zaznaczony jakiś checkbox, pokazujemy overlay i formularz wiadomości
+        overlay.style.display = 'block';
+        messageForm.style.display = 'block';
+      }
+    });
+
+    sendMessagekButton.addEventListener('click', function () {
+      overlay.style.display = 'none';
+      messageForm.style.display = 'none';
+
+    });
+
+    const cancelButton = document.querySelector('.cancel-button');
+    cancelButton.addEventListener('click', function () {
+      // Ukrycie overlay i formularza wiadomości
+      overlay.style.display = 'none';
+      messageForm.style.display = 'none';
+    });
+
+    blockButton.addEventListener('click', function () {
+      const checkedCheckboxes = document.querySelectorAll('.user-record-checkbox:checked');
+
+      checkedCheckboxes.forEach(function (checkbox) {
+        const record = checkbox.closest('.user-record');
+        if (record.style.border === '2px solid black')
+          record.style.border = '2px solid red';
+        else
+          record.style.border = '2px solid black';
+      });
+    });
+
+    function showMessageBox() {
+      const messagePanel = document.getElementById("message-panel");
+      messagePanel.style.display = "block";
+    }
+
+// Funkcja do ukrywania panelu wiadomości
+    function hideMessageBox() {
+      const messagePanel = document.getElementById("message-panel");
+      messagePanel.style.display = "none";
+    }
+
+// Funkcja do wyświetlania informacji o wiadomości po kliknięciu rekordu
+    function displayMessageInfo(user, subject, content) {
+      document.getElementById("user-info").textContent = user;
+      document.getElementById("subject-info").textContent = subject;
+      document.getElementById("message-content").textContent = content;
+    }
+
+// Obsługa kliknięcia rekord
+    document.querySelectorAll('.record').forEach(item => {
+      item.addEventListener('click', () => {
+        const sender = item.querySelector('.sender').textContent;
+        const subject = item.querySelector('.subject').textContent;
+        const content = item.querySelector('.message').textContent;// Tutaj możesz pobrać treść wiadomości z odpowiedniego miejsca
+
+        displayMessageInfo(sender, subject, content);
+        showMessageBox();
+      });
+    });
+
+// Obsługa kliknięcia panel wiadomości, aby ukryć go
+    document.getElementById('message-panel').addEventListener('click', (e) => {
+      if (e.target.id === 'message-panel') {
+        hideMessageBox();
+      }
+    });
+  });
+
+  document.querySelectorAll('.record').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('clicked');
+    });
+  });
+</script>
+</body>
+</html>

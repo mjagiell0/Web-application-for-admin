@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/event_management.css">
+  <title>Zarządzanie wydarzeniami</title>
+</head>
+<body>
+<label class="hamburger-menu">
+  <input type="checkbox"/>
+</label>
+<aside class="sidebar">
+  <br><br><br><br><br>
+  <a href="">Zarządzanie wydarzeniami</a>
+  <br><br>
+  <a href="users_management.html">Zarządzanie użytkownikami</a>
+  <br><br>
+  <a href="version_control.html">Kontrola wersji</a>
+  <br><br>
+  <a href="stats.html"
+     target="_blank">Statystyki</a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br>
+  <a class="logout-button" href="login.html">Wyloguj się</a>
+</aside>
+<div class="record-box">
+  <header>Wydarzenia
+    <button class="bin">
+      <img src="bin.png" alt="Usuń">
+    </button>
+    <button class="block">
+      <img src="block.png" alt="Zablokuj">
+    </button>
+  </header>
+
+  <div class="record-panel">
+    <button class="record" onclick="displayText('Użytkownik: <br><br>Temat: <br><br>')">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">Zatoka smaku</label>
+        <label class="subject">Duża kawa za 5 zł</label>
+        <label class="datetime">2023-04-21 22:45</label>
+        <label class="message">al. Politechniki 10, Łódź, 13:00 - 14:00. Zanurz się w bogatym smaku i aromacie dużego
+          kubka kawy za zaledwie 5 złotych, aby zacząć dzień pełen energii i radości.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">adam_adventure</label>
+        <label class="subject">Koncert w Filharmonii</label>
+        <label class="datetime">2023-02-08 17:05</label>
+        <label class="message">Filharmonia Narodowa, Warszawa, 10 marca 2023. Doświadcz niesamowitej muzyki w wykonaniu
+          światowej klasy muzyków w prestiżowej Filharmonii Narodowej.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">emma_eloquence</label>
+        <label class="subject">Wystawa Sztuki Współczesnej</label>
+        <label class="datetime">2023-12-27 10:30</label>
+        <label class="message">Muzeum Sztuki Nowoczesnej, Warszawa, 5 lipca 2023. Zanurz się w świecie sztuki
+          współczesnej na największej wystawie tego typu w Polsce, prezentującej dzieła artystów z całego
+          świata.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">jakub_journey</label>
+        <label class="subject">Piknik Jazzowy</label>
+        <label class="datetime">2023-10-12 21:00</label>
+        <label class="message">Park Oliwski, Gdańsk, 15 lipca 2023. Przygotuj kosz piknikowy i przynieś kocyk, aby
+          cieszyć się dźwiękami jazzu w otoczeniu pięknej przyrody parku oliwskiego.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">sophie_sunshine</label>
+        <label class="subject">Targi Książki</label>
+        <label class="datetime">2023-08-02 14:15</label>
+        <label class="message">Międzynarodowe Targi Poznańskie, Poznań, 8 listopada 2023. Znajdź swoje ulubione książki
+          i spotkaj autorów podczas największych targów książki w Polsce.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">daniel_daring</label>
+        <label class="subject">Maraton Filmowy</label>
+        <label class="datetime">2023-06-18 08:55</label>
+        <label class="message">Kino Kijów, Kraków, 30 września 2023. Przygotuj się na całodniową ucztę filmową, podczas
+          której będziesz mógł zobaczyć najnowsze hity kinowe i klasyki kina światowego.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">olivia_owl</label>
+        <label class="subject">Gala Operowa</label>
+        <label class="datetime">2023-04-03 19:10</label>
+        <label class="message">Opera Krakowska, Kraków, 17 lutego 2023. Przygotuj się na wieczór pełen wspaniałych arii
+          i operowych przebojów w magicznej scenerii opery krakowskiej.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">max_melody</label>
+        <label class="subject">Mistrzostwa Polski w Surfingu</label>
+        <label class="datetime">2023-01-25 12:50</label>
+        <label class="message">Bałtyk, Sopot, 12 sierpnia 2023. Obserwuj najlepszych polskich surferów w walce o tytuł
+          mistrza kraju na falach Bałtyku w Sopocie.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">ava_adventure</label>
+        <label class="subject">Turniej Szachowy</label>
+        <label class="datetime">2023-12-14 15:25</label>
+        <label class="message">Centrum Konferencyjne ICE Kraków, Kraków, 20 kwietnia 2023. Dołącz do turnieju
+          szachowego, aby zmierzyć się z najlepszymi graczami i poprawić swoje umiejętności szachowe.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">leo_lighthouse</label>
+        <label class="subject">Warsztaty Kulinarne</label>
+        <label class="datetime">2023-10-30 17:40</label>
+        <label class="message">Restauracja Przystań, Gdynia, 7 czerwca 2023. Naucz się przygotowywać pyszne dania pod
+          okiem doświadczonych szefów kuchni w malowniczym otoczeniu portu w Gdyni</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">mia_moonlight</label>
+        <label class="subject">Festiwal Teatralny</label>
+        <label class="datetime">2023-08-19 13:00</label>
+        <label class="message">Teatr Narodowy, Warszawa, 3 września 2023. Przygotuj się na wieczory pełne emocji i
+          świetnych przedstawień teatralnych w jednym z najważniejszych teatrów w Polsce.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">noah_navigator</label>
+        <label class="subject">Wykład Naukowy</label>
+        <label class="datetime">2023-06-07 20:30</label>
+        <label class="message">Politechnika Warszawska, Warszawa, 22 marca 2023. Posłuchaj wykładu czołowych naukowców z
+          różnych dziedzin, aby zgłębić najnowsze odkrycia i trendy w świecie nauki.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">isabella_island</label>
+        <label class="subject">Rajd Rowerowy</label>
+        <label class="datetime">2023-03-28 09:15</label>
+        <label class="message">Bieszczady, Komańcza, 10 lipca 2023. Wyrusz na przygodę rowerową, odkrywając uroki
+          pięknych bieszczadzkich szlaków i malowniczych krajobrazów.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">lucas_lagoon</label>
+        <label class="subject">Warsztaty Fotograficzne</label>
+        <label class="datetime">2023-11-11 16:20</label>
+        <label class="message">Stare Miasto, Lublin, 14 maja 2023. Doskonal swoje umiejętności fotograficzne,
+          fotografując malownicze zabytki i uliczki starego miasta pod okiem doświadczonych fotografów.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">chloe_cloud</label>
+        <label class="subject">Kongres Medyczny</label>
+        <label class="datetime">2023-09-05 10:00</label>
+        <label class="message">Centrum Konferencyjne EXPO Kraków, Kraków, 5 listopada 2023. Przygotuj się na przegląd
+          najnowszych osiągnięć w dziedzinie medycyny podczas prestiżowego kongresu medycznego w Krakowie.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">jack_jungle</label>
+        <label class="subject">Wystawa Motoryzacyjna</label>
+        <label class="datetime">2023-07-22 11:45</label>
+        <label class="message">Targi Lublin, Lublin, 18 września 2023. Zobacz najnowsze modele samochodów i technologie
+          motoryzacyjne na największej wystawie motoryzacyjnej w regionie lubelskim.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">lily_lighthouse</label>
+        <label class="subject">Festiwal Folkloru</label>
+        <label class="datetime">2023-05-10 18:00</label>
+        <label class="message">Rynek, Wrocław, 8 lipca 2023. Poznaj bogactwo kultury i tradycji podczas festiwalu
+          folkloru, gdzie będziesz mógł zobaczyć występy zespołów folkowych z całej Polski.</label>
+      </label>
+    </button>
+    <button class="record">
+      <label>
+        <input type="checkbox" class="record-checkbox">
+      </label>
+      <label class="record-info">
+        <label class="sender">ethan_explorer</label>
+        <label class="subject">Maraton Kulinarny</label>
+        <label class="datetime">2023-02-15 14:30</label>
+        <label class="message"> Stare Miasto, Kraków, 30 października 2023. Podczas maratonu kulinarnego degustuj
+          najsmaczniejsze potrawy z całego świata, serwowane przez restauracje
+          z okolic Krakowa.</label>
+      </label>
+    </button>
+  </div>
+  <div class="message-panel" id="message-panel">
+    <div class="message-info">
+      <p>Twórca wydarzenia: </p>
+      <span id="user-info"></span>
+      <p>Nazwa wydarzenia: </p>
+      <span id="subject-info"></span>
+      <p>Opis:</p>
+      <span id="message-content"></span>
+    </div>
+    <div class="related-records">
+      <p>Użytkownicy:</p>
+      <div class="record-list">
+        <button class="user-record">
+          <label class="sender">Kasia Grzyb</label>
+        </button>
+        <button class="user-record">
+          <label class="sender">Maurycy Kość</label>
+        </button>
+        <button class="user-record">
+          <label class="sender">Izabela Pośpiesz</label>
+        </button>
+        <button class="user-record">
+          <label class="sender">Karol Lorak</label>
+        </button>
+        <button class="user-record">
+          <label class="sender">Ignacy Wór</label>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const binButton = document.querySelector('.bin');
+    const blockButton = document.querySelector('.block');
+    binButton.addEventListener('click', function () {
+      const checkedCheckboxes = document.querySelectorAll('.record-checkbox:checked');
+
+      checkedCheckboxes.forEach(function (checkbox) {
+        const record = checkbox.closest('.record');
+        record.remove();
+      });
+    });
+
+    blockButton.addEventListener('click', function () {
+      const checkedCheckboxes = document.querySelectorAll('.record-checkbox:checked');
+
+      checkedCheckboxes.forEach(function (checkbox) {
+        const record = checkbox.closest('.record');
+        if (record.style.border === 'none' || record.style.border === '2px solid black')
+          record.style.border = '2px solid red';
+        else
+          record.style.border = 'none';
+      });
+    });
+
+    function showMessageBox() {
+      const messagePanel = document.getElementById("message-panel");
+      messagePanel.style.display = "block";
+    }
+
+// Funkcja do ukrywania panelu wiadomości
+    function hideMessageBox() {
+      const messagePanel = document.getElementById("message-panel");
+      messagePanel.style.display = "none";
+    }
+
+// Funkcja do wyświetlania informacji o wiadomości po kliknięciu rekordu
+    function displayMessageInfo(user, subject, content) {
+      document.getElementById("user-info").textContent = user;
+      document.getElementById("subject-info").textContent = subject;
+      document.getElementById("message-content").textContent = content;
+    }
+
+// Obsługa kliknięcia rekord
+    document.querySelectorAll('.record').forEach(item => {
+      item.addEventListener('click', () => {
+        const sender = item.querySelector('.sender').textContent;
+        const subject = item.querySelector('.subject').textContent;
+        const content = item.querySelector('.message').textContent;// Tutaj możesz pobrać treść wiadomości z odpowiedniego miejsca
+
+        displayMessageInfo(sender, subject, content);
+        showMessageBox();
+      });
+    });
+
+// Obsługa kliknięcia panel wiadomości, aby ukryć go
+    document.getElementById('message-panel').addEventListener('click', (e) => {
+      if (e.target.id === 'message-panel') {
+        hideMessageBox();
+      }
+    });
+
+    document.querySelectorAll('.record').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('clicked');
+      });
+    });
+  });
+</script>
+</body>
+</html>

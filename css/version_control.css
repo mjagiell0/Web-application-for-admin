@@ -1,0 +1,192 @@
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+*{
+  background-color: #dcdcdc;
+}
+body {
+  margin: 0;
+}
+
+:root {
+  --bar-width: 100px;
+  --bar-height: 15px;
+  --hamburger-gap: 8px;
+  --foreground: #262a33;
+  --background: #b5b1b7;
+  --hamburger-margin: 8px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger-menu {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  top: var(--hamburger-margin);
+  left: var(--hamburger-margin);
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 10px;
+
+}
+
+.hamburger-menu:has(input:checked) {
+  --foreground: #b5b1b7;
+  --background: #262a33;
+  background-color: #262a33;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+  border: 1px solid var(--background);
+  box-shadow: 0 0 0 1px var(--foreground);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+  rotate var(--animation-timing), translate var(--animation-timing),
+  background-color var(--animation-timing);
+}
+
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.sidebar {
+  transition: translate var(--animation-timing);
+  translate: -100%;
+  padding: 0.5rem 1rem;
+  padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+  background-color: var(--foreground);
+  color: var(--background);
+  max-width: 10rem;
+  min-height: 90vh;
+}
+.sidebar a{
+  background-color: #262a33;
+  color: white;
+  text-decoration: none;
+  font-family: Arial,sans-serif;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+}
+
+.logout-button{
+  background-color: #fd0b0b;
+  color: white;
+  text-decoration: none;
+  font-family: Arial,sans-serif;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+.hamburger-menu:has(input:checked) + .sidebar {
+  translate: 0;
+}
+
+.container {
+  display: flex;
+}
+.buttons {
+  margin-top: -700px;
+  margin-left: 400px;
+  max-width: 200px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+.button {
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: #dcdcdc;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.button:hover {
+  background-color: #d5d4d4;
+  transition: .3s;
+}
+.text-field {
+  flex: 1;
+  padding: 20px;
+  background-color: #dbdbdb;
+  display: none; /* Ukryj pole tekstowe na początku */
+  border-radius: 10px;
+  margin-top: -800px;
+  max-width: 400px;
+  max-height: 500px;
+  margin-left: 400px;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+}
+.show {
+  display: block; /* Pokaż pole tekstowe po kliknięciu przycisku */
+}
+
+.choose{
+  display: flex;
+  margin-top: -100px;
+  margin-left: 80%;
+  padding: 15px;
+  background-color: #222222;
+  color: #fdfdfd;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.choose:hover{
+  background-color: #000000;
+  transform: scale(1.02, 1);
+}
+
+.button{
+
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+}

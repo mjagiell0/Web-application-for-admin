@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Główne okno</title>
+  <link rel="stylesheet" href="css/main_window.css">
+</head>
+<body>
+<div class="header-box">
+  <header>Witaj, Admin_1</header>
+</div>
+
+<button class="button small-button" id="logout" onclick=move_to('login.html')>
+  <img src="logout.png" alt="Profil">
+</button>
+
+<button class="button" id="profil">
+  <img src="profile.png" alt="Profil">
+</button>
+<div class="button-container">
+  <div class="button-row">
+    <button class="center-button" onclick=move_to('event_management.html')>Zarządzanie<br>wydarzeniami</button>
+    <button class="center-button" onclick=move_to('users_management.html')>Zarządzanie<br>kontami<br>użytkowników</button>
+  </div>
+  <div class="button-row">
+    <button class="center-button" onclick=move_to('version_control.html')>Kontrola<br>wersji</button>
+    <button class="center-button" onclick=window.open('stats.html');>Statystyki</button>
+  </div>
+</div>
+<script src="js/move_to.js"></script>
+</body>
+</html>

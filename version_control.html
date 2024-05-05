@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/version_control.css">
+  <title>Kontrola wersji</title>
+</head>
+<body>
+<label class="hamburger-menu">
+  <input type="checkbox"/>
+</label>
+<aside class="sidebar">
+  <br><br><br><br><br>
+  <a href="event_management.html">Zarządzanie wydarzeniami</a>
+  <br><br>
+  <a href="users_management.html">Zarządzanie użytkownikami</a>
+  <br><br>
+  <a href="">Kontrola wersji</a>
+  <br><br>
+  <a href="stats.html" target="_blank">Statystyki</a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br>
+  <a class="logout-button" href="login.html" >Wyloguj się</a>
+</aside>
+
+<div class="container">
+  <div class="buttons">
+    <button class="button" onclick="displayText('Aktualizacja 1.35 <br><br> Co nowego?:<br><br>*Dodaliśmy  nowe funkcje.<br>*Błędy zostały poprawione')">1.35</button>
+    <button class="button" onclick="displayText('Aktualizacja 1.31 <br><br> Co nowego?:<br><br>*Dodaliśmy  nowe funkcje.<br>*Błędy zostały poprawione')">1.31</button>
+    <button class="button" onclick="displayText('Aktualizacja 1.29 <br><br> Co nowego?:<br><br>*Dodaliśmy  nowe funkcje.<br>*Błędy zostały poprawione')">1.29</button>
+    <button class="button" onclick="displayText('Aktualizacja 1.26 <br><br> Co nowego?:<br><br>*Dodaliśmy  nowe funkcje.<br>*Błędy zostały poprawione')">1.26</button>
+    <button class="button" onclick="displayText('Aktualizacja 1.11 <br><br> Co nowego?:<br><br>*Dodaliśmy  nowe funkcje.<br>*Błędy zostały poprawione')">1.11</button>
+  </div>
+  <div class="text-field" id="text-field"></div>
+</div>
+<button class="choose" onclick="mess()">Zaktualizuj i zapisz</button>
+<script>
+  function displayText(text) {
+    var textField = document.getElementById("text-field");
+    textField.innerHTML = text;
+    textField.classList.add("show");
+  }
+  function mess(){
+    alert("Pomyślnie zaktualizowano aplikację");
+  }
+</script>
+</body>
+</html>
