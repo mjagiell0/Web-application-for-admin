@@ -267,9 +267,9 @@ header {
   display: none;
   flex-grow: 1;
   padding: 20px;
-  width: 20%;
-  margin-left: 65%;
-  margin-top: -40%;
+  width: 40%;
+  margin-left: 55%;
+  margin-top: -38.6%;
   border-radius: 10px;
   background: #dcdcdc;
   box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
@@ -278,10 +278,9 @@ header {
 .message-info p{
   background-color: #dcdcdc;
   font-size: 20px;
-  text-align: center;
   width: 50%;
   border-radius: 10px;
-  border: 1px solid black;
+  text-decoration: underline;
 }
 
 .message-info span{
@@ -300,9 +299,9 @@ header {
   height: 25px;
   width: 40%;
   justify-content: center;
-  text-align: center;
+
   border-radius: 12px;
-  border: 1px solid black;
+  text-decoration: underline;
 }
 .record-list {
   max-height: 200px; /* Ustaw maksymalną wysokość listy rekordów */
